@@ -1,10 +1,20 @@
-- 👋 Hi, I’m @KingWisdom01
-- 👀 I’m interested in ... learning black hat hacking 
-- 🌱 I’m currently learning ... black hat hacking 
-- 💞️ I’m looking to collaborate on ... black hat hacking 
-- 📫 How to reach me ...odehwisdom100@gmail.com
+# SyntheticEdge AI
 
-<!---
-KingWisdom01/KingWisdom01 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+This repository contains utilities for connecting to the Deriv WebSocket API and detecting live trading patterns. Credentials are loaded from environment variables for security:
+
+- `DERIV_API_TOKEN` – Deriv API token
+- `DERIV_APP_ID` – Deriv application ID
+- `TELEGRAM_BOT_TOKEN` – Telegram bot token for alerts
+- `TELEGRAM_CHAT_ID` – Telegram chat ID
+
+## Running pattern detector
+
+```
+export DERIV_API_TOKEN=your_token
+export DERIV_APP_ID=your_app_id
+export TELEGRAM_BOT_TOKEN=your_bot_token
+export TELEGRAM_CHAT_ID=your_chat_id
+python analytics/pattern_detector.py
+```
+
+The script connects directly to the Deriv WebSocket, processes real-time ticks, detects candlestick patterns, support/resistance breaks, and trend line breaks. Alerts are sent immediately to the Telegram chat.
